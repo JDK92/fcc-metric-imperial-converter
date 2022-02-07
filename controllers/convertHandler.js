@@ -124,7 +124,7 @@ function ConvertHandler() {
         result = initNum * miToKm;
         break;
       case 'km':
-        result = Math.round((Math.initNum / miToKm) * 100000) / 100000;
+        result = Math.round((initNum / miToKm) * 100000) / 100000;
         break;
     }
 
