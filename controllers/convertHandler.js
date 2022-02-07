@@ -81,7 +81,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'gallons';
         break;
-      case 'L':
+      case 'l':
         result = 'liters';
         break;
       case 'lbs':
@@ -112,19 +112,19 @@ function ConvertHandler() {
         result = initNum * galToL;
         break;
       case 'l':
-        result = initNum / galToL;
+        result = Math.round((initNum / galToL) * 100000) / 100000;
         break;
       case 'lbs':
         result = initNum * lbsToKg;
         break;
       case 'kg':
-        result = initNum / lbsToKg;
+        result = Math.round((initNum / lbsToKg) * 100000) / 100000;
         break;
       case 'mi':
         result = initNum * miToKm;
         break;
       case 'km':
-        result = initNum / miToKm;
+        result = Math.round((Math.initNum / miToKm) * 100000) / 100000;
         break;
     }
 
