@@ -1,7 +1,7 @@
 function ConvertHandler() {
 
   this.getNum = function (input) {
-    const numRule = /^\d*[.]?\d*[\/]?\d*[.]?\d*(?=[a-z]*$)/g;
+    const numRule = /^\d*[.]?\d*[\/]?\d*[.]?\d*(?=[a-z]*$)/ig;
     const matchNum = input.match(numRule);
 
     if (!matchNum) return false;
@@ -31,10 +31,14 @@ function ConvertHandler() {
     const unitRule = /[a-z]+$(?<=\d*[.]?\d*[\/]?\d*[.]?\d*)/i;
     const matchUnit = input.match(unitRule);
 
+
+
     if (!matchUnit) return false;
 
     let [unit] = matchUnit;
     unit = unit.toLowerCase();
+
+
 
     result = (units.includes(unit)) ? unit : false;
 
@@ -47,7 +51,7 @@ function ConvertHandler() {
 
     switch (initUnit) {
       case 'gal':
-        result = 'l';
+        result = 'L';
         break;
       case 'l':
         result = 'gal';
@@ -77,7 +81,7 @@ function ConvertHandler() {
       case 'gal':
         result = 'gallons';
         break;
-      case 'l':
+      case 'L':
         result = 'liters';
         break;
       case 'lbs':
